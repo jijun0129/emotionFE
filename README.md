@@ -1,8 +1,17 @@
-# React + Vite
+# 감정 관리 도우미
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## 프로젝트 세팅
 
-Currently, two official plugins are available:
+**사용하는 라이브러리**
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- axios
+- styled component
+- react-router-dom
+- zustand
+
+### 실행 방법
+
+1. 현재 디렉토리에서 CMD 또는 터미널 열기
+2. `npm install` 또는 `npm i` 명령어 실행
+3. `npm run dev` 명령어로 개발 서버 실행
+4. 접속 주소: `http://localhost:5173` 또는 터미널에서 확인
