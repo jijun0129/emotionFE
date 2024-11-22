@@ -8,7 +8,7 @@ import useUserStore from '../store/userStore.js';
 
 const Main = styled.main`
 	width: 100vw;
-	height: 100vh;
+	height: 93vh;
 
 	display: flex;
 	flex-direction: row;
@@ -18,7 +18,7 @@ const Main = styled.main`
 
 const SignSection = styled.section`
 	width: 300px;
-	margin-left: 30px;
+	margin-bottom: 4vh;
 
 	display: flex;
 	flex-direction: column;

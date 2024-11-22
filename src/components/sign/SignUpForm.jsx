@@ -10,6 +10,13 @@ const Form = styled.form`
 	flex-direction: column;
 `;
 
+const Title = styled.div`
+	margin-top: 20px;
+	margin-bottom: 10px;
+	display: flex;
+	justify-content: center;
+`;
+
 const Input = styled.input`
 	height: 40px;
 	margin-top: 10px;
@@ -93,6 +100,7 @@ const SignUpForm = () => {
 	return (
 		//폼이 제출될 때 onSubmitSignUp 함수가 호출
 		<Form onSubmit={onSubmitSignUp}>
+			<Title>회원가입</Title>
 			<Input
 				onChange={onChangeName}
 				value={name}

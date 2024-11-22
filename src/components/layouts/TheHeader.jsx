@@ -4,7 +4,7 @@ import useUserStore from '../../store/userStore.js';
 
 const Header = styled.header`
 	width: 100%;
-	height: 5rem;
+	height: 7vh;
 	background-color: #727272;
 	display: flex;
 	justify-content: center;
@@ -19,7 +19,7 @@ const Nav = styled.nav`
 	align-items: center;
 `;
 
-const Ul = styled.ul`
+const PageUl = styled.ul`
 	list-style: none;
 	margin: 0;
 	padding: 0;
@@ -28,7 +28,7 @@ const Ul = styled.ul`
 	align-items: center;
 `;
 
-const Li = styled.li`
+const PageLi = styled.li`
 	margin: 0 0.5rem;
 `;
 
@@ -46,19 +46,19 @@ const TheHeader = () => {
 					<h1>
 						<Link to="/">Emotion</Link>
 					</h1>
-					<Ul>
-						<Li>
+					<PageUl>
+						<PageLi>
 							<Link to="/">감정상태 입력</Link>
-						</Li>
-						<Li>
+						</PageLi>
+						<PageLi>
 							<Link to="/graph">감정그래프 보기</Link>
-						</Li>
-						<Li>
+						</PageLi>
+						<PageLi>
 							<Link to="/sign" onClick={onClickLogout}>
 								로그아웃
 							</Link>
-						</Li>
-					</Ul>
+						</PageLi>
+					</PageUl>
 				</Nav>
 			</Header>
 		</>

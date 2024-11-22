@@ -12,6 +12,13 @@ const Form = styled.form`
 	flex-direction: column;
 `;
 
+const Title = styled.div`
+	margin-top: 20px;
+	margin-bottom: 10px;
+	display: flex;
+	justify-content: center;
+`;
+
 const Input = styled.input`
 	height: 40px;
 	margin-top: 10px;
@@ -84,6 +91,7 @@ const SignInForm = () => {
 
 	return (
 		<Form onSubmit={onSubmitLogin}>
+			<Title>로그인</Title>
 			<Input
 				onChange={onChangeUsername}
 				value={username}
