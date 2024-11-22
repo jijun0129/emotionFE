@@ -1,5 +1,6 @@
 import { Link } from 'react-router-dom';
 import styled from 'styled-components';
+import useUserStore from '../../store/userStore.js';
 
 const Header = styled.header`
 	width: 100%;
@@ -32,6 +33,12 @@ const Li = styled.li`
 `;
 
 const TheHeader = () => {
+	const { logout } = useUserStore();
+
+	const onClickLogout = () => {
+		logout();
+	};
+
 	return (
 		<>
 			<Header>
@@ -47,7 +54,9 @@ const TheHeader = () => {
 							<Link to="/graph">감정그래프 보기</Link>
 						</Li>
 						<Li>
-							<Link to="/sign">로그아웃</Link>
+							<Link to="/sign" onClick={onClickLogout}>
+								로그아웃
+							</Link>
 						</Li>
 					</Ul>
 				</Nav>
