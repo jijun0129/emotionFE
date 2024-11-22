@@ -3,8 +3,8 @@ import { useEffect, useState } from 'react';
 import SignInForm from '../components/sign/SignInForm.jsx';
 import SignUpForm from '../components/sign/SignUpForm.jsx';
 import { useNavigate } from 'react-router-dom';
-import TheHeader from '../components/layouts/TheHeader.jsx';
 import useUserStore from '../store/userStore.js';
+import SignHeader from '../components/layouts/SignHeader.jsx';
 
 const Main = styled.main`
 	width: 100vw;
@@ -77,7 +77,7 @@ const SignPage = () => {
 
 	return (
 		<>
-			<TheHeader />
+			<SignHeader />
 			<Main>
 				<SignSection>
 					{isSignIn ? <SignInForm /> : <SignUpForm />}
