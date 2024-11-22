@@ -8,6 +8,7 @@
 - styled component
 - react-router-dom
 - zustand
+- react-chartjs-2
 
 ### 실행 방법
 
