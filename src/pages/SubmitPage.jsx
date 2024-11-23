@@ -16,14 +16,15 @@ const Main = styled.main`
 `;
 
 const SubmitSection = styled.section`
-	width: 300px;
+	width: 500px;
 	margin-bottom: 4vh;
 
 	display: flex;
 	flex-direction: column;
 	align-items: center;
 
-	border: 1px solid var(--color-grey-2);
+	border: 3px solid #D9E1F9;
+	border-radius:20px;
 `;
 
 const SubmitPage = () => {
