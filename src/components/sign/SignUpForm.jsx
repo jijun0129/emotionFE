@@ -19,10 +19,11 @@ const Title = styled.div`
 
 const Input = styled.input`
 	height: 40px;
-	margin-top: 10px;
+	margin-top: 15px;
 	padding: 5px 10px;
 
 	border: 1px solid var(--color-grey-2);
+	border-radius:5px;
 	background-color: var(--color-grey-1);
 
 	outline: none;
@@ -30,15 +31,18 @@ const Input = styled.input`
 
 const Button = styled.button`
 	height: 30px;
-	margin-top: 10px;
+	margin-top: 20px;
 
 	font-size: 16px;
 	color: var(--color-white);
-	background-color: var(--color-blue-1);
 
 	border: none;
 	border-radius: 10px;
 	cursor: pointer;
+	background-color: rgba(065,105,225,0.5);
+	&:hover{
+		background-color: rgba(065,105,225,0.9);
+	}
 `;
 
 const SignUpForm = () => {
@@ -105,7 +109,7 @@ const SignUpForm = () => {
 				onChange={onChangeName}
 				value={name}
 				type="text"
-				placeholder="Name"
+				placeholder="Username"
 			/>
 			<Input
 				onChange={onChangeEmail}
