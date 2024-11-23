@@ -1,6 +1,7 @@
 import { NavLink, useNavigate } from 'react-router-dom';
 import styled from 'styled-components';
 import useUserStore from '../../store/userStore.js';
+import Title from '../../assets/title.png'
 
 const Header = styled.header`
 	width: 100%;
@@ -17,6 +18,10 @@ const Header = styled.header`
 		}
 	}
 `;
+const TitleImg = styled.img`
+	width: 40px;
+	height: 40px;
+`;
 
 const Nav = styled.nav`
 	width: 90%;
@@ -24,6 +29,7 @@ const Nav = styled.nav`
 	display: flex;
 	justify-content: space-between;
 	align-items: center;
+
 `;
 
 const PageUl = styled.ul`
@@ -42,7 +48,6 @@ const PageLi = styled.li`
 const ActiveLink = styled(NavLink)`
 	text-decoration: none;
 	color: #121212;
-
 	&.active {
 		text-decoration: underline;
 	}
@@ -69,18 +74,18 @@ const LogoutButton = styled.button`
 
 const TheHeader = () => {
 	const { logout } = useUserStore();
-	const navigate = useNavigate(); // useNavigate 훅을 사용하여 페이지 이동
+	const navigate = useNavigate();
 
 	const onClickLogout = () => {
-		logout(); // 로그아웃 처리
-		navigate('/sign'); // 로그아웃 후 로그인 페이지로 이동
+		logout();
+		navigate('/sign');
 	};
 
 	return (
 		<Header>
 			<Nav>
 				<h1>
-					<NavLink to="/">Emotion</NavLink>
+					<NavLink to="/" style={{ display: 'flex', alignItems: 'center' }}><TitleImg src={Title}/>Emotion</NavLink>
 				</h1>
 				<PageUl>
 					<PageLi>
@@ -90,7 +95,6 @@ const TheHeader = () => {
 						<ActiveLink to="/graph">감정그래프 보기</ActiveLink>
 					</PageLi>
 					<PageLi>
-						{/* 로그아웃 버튼 추가 */}
 						<LogoutButton onClick={onClickLogout}>로그아웃</LogoutButton>
 					</PageLi>
 				</PageUl>

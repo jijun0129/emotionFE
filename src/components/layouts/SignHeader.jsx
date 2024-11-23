@@ -1,5 +1,6 @@
 import { Link } from 'react-router-dom';
 import styled from 'styled-components';
+import Title from '../../assets/title.png'
 
 const Header = styled.header`
 	width: 100%;
@@ -7,6 +8,11 @@ const Header = styled.header`
 	display: flex;
 	justify-content: center;
 	align-items: center;
+`;
+
+const TitleImg = styled.img`
+	width: 40px;
+	height: 40px;
 `;
 
 const Nav = styled.nav`
@@ -28,7 +34,7 @@ const SignHeader = () => {
 			<Header>
 				<Nav>
 					<h1>
-						<Link to="/sign">Emotion</Link>
+						<Link to="/sign" style={{ display: 'flex', alignItems: 'center' }}><TitleImg src={Title}/>Emotion</Link>
 					</h1>
 				</Nav>
 			</Header>
