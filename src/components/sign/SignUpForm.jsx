@@ -84,16 +84,27 @@ const SignUpForm = () => {
 		axios
 			.post(`${HOST}/auth/signup`, signUpRequest, {
 				headers: {
-					'Content-Type': 'application/json',
+					'Content-Type': 'application/json', // JSON 형식 명시
 				},
 			})
 			.then(response => {
-				console.log('회원가입 성공:', response);
+				console.log('회원가입 성공:', response.data); // 성공 시 데이터 출력
 				alert('회원가입이 성공하였습니다.');
 			})
 			.catch(error => {
-				console.error('회원가입 오류:', error);
-				alert('회원가입이 실패하였습니다.');
+				if (error.response) {
+					// 서버에서 반환한 오류 메시지 처리
+					console.error('회원가입 오류 응답:', error.response.data);
+					alert(`회원가입 실패: ${error.response.data.message}`);
+				} else if (error.request) {
+					// 요청이 전송되었으나 응답이 없는 경우
+					console.error('서버 응답 없음:', error.request);
+					alert('회원가입 실패: 서버 응답이 없습니다.');
+				} else {
+					// 기타 에러 처리
+					console.error('요청 설정 오류:', error.message);
+					alert(`회원가입 실패: ${error.message}`);
+				}
 			});
 	};
 
