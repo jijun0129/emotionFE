@@ -23,7 +23,8 @@ const SubmitSection = styled.section`
 	flex-direction: column;
 	align-items: center;
 
-	border: 1px solid var(--color-grey-2);
+	border: 3px solid #D9E1F9;
+	border-radius:20px;
 `;
 
 const SubmitPage = () => {

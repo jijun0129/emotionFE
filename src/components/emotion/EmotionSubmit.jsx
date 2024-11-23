@@ -9,13 +9,13 @@ import Smile from '../../assets/smile.svg';
 
 const Form = styled.form`
 	width: 80%;
-
 	display: flex;
 	flex-direction: column;
 `;
 
 const Name = styled.div`
 	margin-top: 20px;
+	font-size: 18px;
 	display: flex;
 	justify-content: center;
 `;
@@ -27,12 +27,14 @@ const Content = styled.div`
 
 const Button = styled.button`
 	height: 35px;
-	margin: 20px;
+	margin: 20px 100px;
 
 	font-size: 16px;
 	color: var(--color-white);
-	background-color: var(--color-blue-1);
-
+	background-color: rgba(065,105,225,0.5);
+	&:hover{
+		background-color: rgba(065,105,225,0.9);
+	}
 	border: none;
 	border-radius: 10px;
 	cursor: pointer;
@@ -56,7 +58,7 @@ const LabelStress = styled.label`
 	margin: 10px;
 	img {
 		width: 50px;
-		height: 50px;
+		height: 60px;
 	}
 `;
 
