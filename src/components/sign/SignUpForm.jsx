@@ -23,7 +23,7 @@ const Input = styled.input`
 	padding: 5px 10px;
 
 	border: 1px solid var(--color-grey-2);
-	border-radius:5px;
+	border-radius: 5px;
 	background-color: var(--color-grey-1);
 
 	outline: none;
@@ -39,9 +39,9 @@ const Button = styled.button`
 	border: none;
 	border-radius: 10px;
 	cursor: pointer;
-	background-color: rgba(065,105,225,0.5);
-	&:hover{
-		background-color: rgba(065,105,225,0.9);
+	background-color: rgba(065, 105, 225, 0.5);
+	&:hover {
+		background-color: rgba(065, 105, 225, 0.9);
 	}
 `;
 
@@ -80,7 +80,7 @@ const SignUpForm = () => {
 
 		//signUpRequest 객체를 생성하여 axios를 통해 서버에 POST 요청을 보냅니다.
 		const signUpRequest = {
-			name,
+			username: name,
 			email,
 			password,
 		};
@@ -92,12 +92,21 @@ const SignUpForm = () => {
 				},
 			})
 			.then(response => {
-				console.log('회원가입 성공:', response);
-				alert('회원가입이 성공하였습니다.');
+				console.log('회원가입 성공:', response.data);
+				alert('회원가입이 성공하였습니다.\n' + '토큰: ' + response.data.token);
 			})
 			.catch(error => {
-				console.error('회원가입 오류:', error);
-				alert('회원가입이 실패하였습니다.');
+				if (error.response) {
+					// 서버에서 반환한 오류 메시지 처리
+					console.error('회원가입 오류 응답:', error.response.data);
+					alert(`회원가입 실패: ${error.response.data.message}`);
+				} else if (error.request) {
+					console.error('서버 응답 없음:', error.request);
+					alert('회원가입 실패: 서버 응답이 없습니다.');
+				} else {
+					console.error('요청 설정 오류:', error.message);
+					alert(`회원가입 실패: ${error.message}`);
+				}
 			});
 	};
 

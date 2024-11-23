@@ -18,11 +18,11 @@ ChartJS.register(LineElement, CategoryScale, LinearScale, PointElement);
 
 const EmotionGraph = () => {
 	const data = {
-		labels: ['월', '화', '수', '목', '금', '토', '일'],
+		labels: ['11/17', '11/18', '11/19', '11/20', '11/21', '11/22', '11/23'],
 		datasets: [
 			{
 				label: '감정 점수',
-				data: [3, 4, 2, 5, 4, 3, 4],
+				data: [3, 2, 2, 5, 4, 4, 5],
 				fill: false,
 				backgroundColor: 'rgba(75,192,192,0.2)',
 				borderColor: 'rgba(75,192,192,1)',

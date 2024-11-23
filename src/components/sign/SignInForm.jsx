@@ -59,7 +59,6 @@ const SignInForm = () => {
 
 	const onSubmitLogin = e => {
 		e.preventDefault();
-
 		// 모든 값이 채워져있는지 검증
 		if (username.length == 0 || password.length == 0) {
 			alert('모든 필드를 채워주세요!');
@@ -72,9 +71,18 @@ const SignInForm = () => {
 		};
 
 		axios
-			.post(`${HOST}/auth/login`, signInRequest, {
-				withCredentials: true,
-			})
+			.post(
+				`${HOST}/auth/login`,
+				new URLSearchParams({
+					username: signInRequest.username,
+					password: signInRequest.password,
+				}).toString(), // x-www-form-urlencoded 형식으로 변환
+				{
+					headers: {
+						'Content-Type': 'application/x-www-form-urlencoded',
+					},
+				},
+			)
 			.then(res => {
 				const { id, username } = res.data;
 
@@ -84,9 +92,9 @@ const SignInForm = () => {
 				};
 
 				console.log(user);
-				login(user);
+				login(user); // 로그인 처리 함수 호출
 
-				navigate('/');
+				navigate('/'); // 메인 페이지로 이동
 			})
 			.catch(() => {
 				alert('로그인에 실패했습니다.');
