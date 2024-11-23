@@ -16,7 +16,7 @@ const Main = styled.main`
 `;
 
 const SubmitSection = styled.section`
-	width: 300px;
+	width: 500px;
 	margin-bottom: 4vh;
 
 	display: flex;
