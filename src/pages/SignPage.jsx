@@ -24,8 +24,8 @@ const SignSection = styled.section`
 	flex-direction: column;
 	align-items: center;
 
-	border: 1px solid var(--color-grey-2);
-	border-radius:10px;
+	border: 3px solid #D9E1F9;
+	border-radius:20px;
 `;
 
 const DividorDiv = styled.div`

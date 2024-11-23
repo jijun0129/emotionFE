@@ -37,13 +37,13 @@ const Button = styled.button`
 
 	font-size: 16px;
 	color: var(--color-white);
-	background-color: rgba(065,105,225,0.7);
 
 	border: none;
 	border-radius: 10px;
 	cursor: pointer;
+	background-color: rgba(065,105,225,0.5);
 	&:hover{
-		background-color: rgba(065,105,225);
+		background-color: rgba(065,105,225,0.9);
 	}
 `;
 
