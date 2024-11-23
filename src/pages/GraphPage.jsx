@@ -13,13 +13,17 @@ const Main = styled.main`
 	align-items: center;
 `;
 const TextDiv = styled.div`
-	margin-top: 10px;
+	padding: 3vh 25vw;
+	background-color: #D9E1F9;
+	margin-top: 40px;
+	border-radius: 10px;
 `;
 const GraghDiv = styled.div`
-	margin-top: 10px;
+	margin: 20px;
+	width: 500px;
 `;
 const ActivityDiv = styled.div`
-	margin-top: 10px;
+	margin-top: 20px;
 	display: flex;
 	flex-direction: row;
 	justify-content: center;
